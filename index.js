@@ -21,7 +21,7 @@ const callAndSave = async(options) => {
 
 }
 
-const saveData = async(data) => {
+const saveData = async(data) => { 
 
     serviceTimer = new timerModel(data)
     serviceTimer.save();
@@ -47,26 +47,30 @@ const ratQueen = (req, res) => {
     if(options) {
        options = Buffer.from(options, 'base64').toString('ascii');
        options = JSON.parse(options)
+       let count = 0;
+       let intervalVar = setInterval(async() => {
+           ++count;
+           try {
+               if(count === loop) {
+                   await Promise.all(generateRats(n,options));
+                   clearInterval(intervalVar);
+                   res.status(200).json({'status': 'ok'})
+               }else {
+                   Promise.all(generateRats(n, options));
+               }
+           }
+           catch(error) {
+               console.log("error", error)
+               clearInterval(intervalVar);
+               res.status(500).json({'error': error})
+           }
+           
+       }, interval);
     }
-    let count = 0;
-    let intervalVar = setInterval(async() => {
-        ++count;
-        try {
-            if(count === loop) {
-                await Promise.all(generateRats(n,options));
-                clearInterval(intervalVar);
-                res.status(200).json({'status': 'ok'})
-            }else {
-                Promise.all(generateRats(n, options));
-            }
-        }
-        catch(error) {
-            console.log("error", error)
-            clearInterval(intervalVar);
-            res.status(200).json({'error': error})
-        }
-        
-    }, interval);
+    else {
+        res.status(500).json({'error': 'error'})
+    }
+
 }
 
 exports.ratQueen = ratQueen

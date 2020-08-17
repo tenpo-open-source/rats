@@ -1,3 +1,5 @@
 .gcloudignore
 node_modules
 .env.yaml
+coverage
+.nyc_output

@@ -5,6 +5,4 @@ const timerSchema = new Schema({
     serviceTime: String
 })
 
-
-
 module.exports = model('Timer', timerSchema)

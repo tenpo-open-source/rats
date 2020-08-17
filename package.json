@@ -7,9 +7,15 @@
     "axios": "^0.19.2",
     "mongoose": "^5.9.28"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^8.1.1",
+    "nyc": "^15.1.0",
+    "proxyquire": "^2.1.3"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "nyc mocha tests/ --recursive",
+    "coverage-report": "npm test; nyc report --reporter=html"
   },
   "author": "",
   "license": "ISC"
