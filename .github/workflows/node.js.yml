@@ -26,9 +26,7 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - run: npm ci
     - run: npm run build --if-present
-    - name: Debug Action
-      uses: hmarr/debug-action@v1.0.0
     - name: Run the tests and generate coverage report
-      run: npm install -g codecov; npm run coverage-codecov
+      run: npm install -g codecov; npm run coverage-codecov -t CODECOV_TOKEN -f coverage/lcov.info
       env:
         CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
