@@ -10,7 +10,7 @@ describe('getData', () => {
             connect: () => {return;},
             model:() => {
                 return {
-                    find: () => {return [{timestamp:"343434", serviceTime:"324324"}]}
+                    find: () => {return Promise.resolve([{timestamp:"343434", serviceTime:"324324"}])}
                 }
             }
         },
