@@ -26,8 +26,8 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - run: npm ci
     - run: npm run build --if-present
-    - run: npm install -g codecov
     - name: Run the tests and generate coverage report
-      run: echo $TOKEN; npm run coverage-codecov
+      run: npm run coverage-codecov
+    - run: bash <(curl -s https://codecov.io/bash)
       env:
-        TOKEN: ${{ secrets.CODECOV_TOKEN }}
+        CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
