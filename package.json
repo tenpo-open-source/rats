@@ -16,7 +16,7 @@
   "scripts": {
     "test": "nyc mocha tests/ --recursive",
     "coverage-report": "npm test; nyc report --reporter=html ",
-    "coverage-codecov": "nyc mocha tests/ --report lcovonly -- -R spec && codecov"
+    "coverage-codecov": "nyc mocha tests/ --report lcovonly -- -R spec"
   },
   "author": "",
   "license": "ISC"
