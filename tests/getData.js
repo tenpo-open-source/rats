@@ -36,6 +36,6 @@ describe('getData', () => {
         expect(file).to.equal('results.csv');
         expect(line).to.equal('343434;324324\n')
         done();
-    });
+    }).timeout(10000);
 
 });
