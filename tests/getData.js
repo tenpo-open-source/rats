@@ -21,7 +21,8 @@ describe('getData', () => {
                 writeFileSync: (fileTmp) => {
                     file = fileTmp
                     done()
-                }
+                },
+                appendFileSync:()=>{return}
             }
         });
     })

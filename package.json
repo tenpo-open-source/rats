@@ -15,8 +15,8 @@
   },
   "scripts": {
     "test": "nyc mocha tests/ --recursive",
-    "coverage-report": "npm test; nyc report --reporter=html",
-    "coverage-codecov": "nyc mocha --report lcovonly -- -R spec && codecov"
+    "coverage-report": "npm test; nyc report --reporter=html ",
+    "coverage-codecov": "nyc mocha tests/ --report lcovonly -- -R spec && codecov"
   },
   "author": "",
   "license": "ISC"
