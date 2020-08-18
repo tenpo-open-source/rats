@@ -20,22 +20,14 @@ describe('getData', () => {
             'fs': {
                 writeFileSync: (fileTmp) => {
                     file = fileTmp
-                    return;
-                },
-                appendFileSync: (fileTmp, lineTmp) => {
-                    file = fileTmp
-                    line = lineTmp
                     done()
-                    return;
                 }
             }
         });
     })
     it('should write a file with results', (done) => {
         expect(file).to.equal('results.csv')
-        expect(file).to.equal('results.csv');
-        expect(line).to.equal('343434;324324\n')
         done();
-    }).timeout(10000);
+    });
 
 });
