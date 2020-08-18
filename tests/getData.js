@@ -20,11 +20,13 @@ describe('getData', () => {
             'fs': {
                 writeFileSync: (fileTmp) => {
                     file = fileTmp
+                    return;
                 },
                 appendFileSync: (fileTmp, lineTmp) => {
                     file = fileTmp
                     line = lineTmp
                     done()
+                    return;
                 }
             }
         });
