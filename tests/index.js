@@ -106,10 +106,76 @@ describe('ratQuen', () => {
     }
     index.ratQueen(req, res);
   });
-  it('should return error if occurr err in axios', (done) => {
-    let index2 = proxyquire('../index.js', {
+  it('should return ok if occurr err in axios', (done) => {
+    let indexTmp = proxyquire('../index.js', {
         'axios': () => {
            throw "error"
+        },
+        './timer':function(){
+            this.save = ()=>{return};
+        },
+        'mongoose': {
+            connect: () => {return;}
+        }
+    });
+    const req = {
+        query: {
+            ratsNumber:1,
+            loop: 2,
+            interval:1,
+            options: "eyJob2xhIjoiY2hhbyJ9"
+        }
+    }
+    const res = {
+        status:(status) => {
+            expect(status).to.equal(200)
+            return {
+                json:(data) => {
+                    expect(data).to.deep.equal({status: 'ok'})
+                    done();
+                }
+            }
+        }
+    }
+    indexTmp.ratQueen(req, res);
+  });
+  it('should return ok if occurr err in save data', (done) => {
+    let indexTmp = proxyquire('../index.js', {
+        'axios': () => {
+            return Promise.resolve()
+        },
+        './timer':function(){
+            this.save = ()=>{throw "error"};
+        },
+        'mongoose': {
+            connect: () => {return;}
+        }
+    });
+    const req = {
+        query: {
+            ratsNumber:1,
+            loop: 2,
+            interval:1,
+            options: "eyJob2xhIjoiY2hhbyJ9"
+        }
+    }
+    const res = {
+        status:(status) => {
+            expect(status).to.equal(200)
+            return {
+                json:(data) => {
+                    expect(data).to.deep.equal({status: 'ok'})
+                    done();
+                }
+            }
+        }
+    }
+    indexTmp.ratQueen(req, res);
+  });
+  it('should return ok if occurr other error', (done) => {
+    let indexTmp = proxyquire('../index.js', {
+        'axios': () => {
+            return Promise.resolve()
         },
         './timer':function(){
             this.save = ()=>{return};
@@ -137,6 +203,7 @@ describe('ratQuen', () => {
             }
         }
     }
-    index2.ratQueen(req, res);
+    Promise.all = () => {throw "error"};
+    indexTmp.ratQueen(req, res);
   });
 });

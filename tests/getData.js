@@ -17,11 +17,11 @@ describe('getData', () => {
         'fs': {
             writeFileSync: (file) => {
                 expect(file).to.equal('results.csv')
-                done();
             },
             appendFileSync: (file, line) => {
                 expect(file).to.equal('results.csv');
                 expect(line).to.equal('343434;324324\n')
+                done();
             }
         }
     });

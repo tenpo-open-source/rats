@@ -13,12 +13,17 @@ mongoose.connect(mongoURI, {
 
 const callAndSave = async(options) => {
     let start = process.hrtime()
-    await axios(options);
+    try {
+        await axios(options);
+    }
+    catch(err){
+        console.log("error axios", err)
+    }
     let end = process.hrtime(start)
     const serviceTime =  Math.round((end[0] * 1000) + (end[1] / 1000000))
     const date = new Date().toISOString()
     saveData({timestamp: date, serviceTime})
-
+    .catch((err)=>{console.log("error save", err)})
 }
 
 const saveData = async(data) => { 
@@ -60,7 +65,7 @@ const ratQueen = (req, res) => {
                }
            }
            catch(error) {
-               console.log("error", error)
+               console.log("error catch", error)
                clearInterval(intervalVar);
                res.status(500).json({'error': error})
            }
