@@ -1,4 +1,9 @@
 # Herramienta simple y barata para GRANDES pruebas de carga 
+<p align="center">
+    <a href="https://codecov.io/gh/tenpo-open-source/rats">
+    <img src="https://codecov.io/gh/tenpo-open-source/rats/branch/master/graph/badge.svg?token=G22JX26A93" />
+    </a>
+</p>
 
 ## Motivación
 
