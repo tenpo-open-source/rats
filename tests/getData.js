@@ -1,5 +1,5 @@
 const chai = require('chai');
-const proxyquire = require('proxyquire');
+const proxyquire = require('proxyquire').noCallThru();
 
 const { expect } = chai;
 
