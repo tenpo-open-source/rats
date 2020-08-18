@@ -28,4 +28,7 @@ jobs:
     - run: npm run build --if-present
     - run: npm test
     - run: npm install -g codecov
+      with:
+        token: ${{ secrets.CODECOV_TOKEN }}
+    - run: echo $token
     - run: npm run coverage-codecov
