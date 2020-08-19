@@ -1,10 +1,13 @@
 # Herramienta simple y barata para GRANDES pruebas de carga 
 <p align="center">
+    <a href="https://github.com/tenpo-open-source/rats/workflows/node-js">
+        <img src="https://github.com/tenpo-open-source/rats/workflows/node-js/badge.svg" />
+    </a>
     <a href="https://codecov.io/gh/tenpo-open-source/rats">
-        <img src="https://codecov.io/gh/tenpo-open-source/rats/branch/master/graph/badge.svg?token=G22JX26A93" />
+        <img src="https://codecov.io/gh/tenpo-open-source/rats/branch/master/graph/badge.svg" />
     </a>
     <a href="https://www.codefactor.io/repository/github/tenpo-open-source/rats">
-        <img src="https://www.codefactor.io/repository/github/tenpo-open-source/rats/badge?s=3cf91c60270c9d4a3e961745504e4c4e603f8d28" />
+        <img src="https://www.codefactor.io/repository/github/tenpo-open-source/rats/badge" />
     </a>
     <a href="https://snyk.io/test/github/tenpo-open-source/rats">
         <img src="https://snyk.io/test/github/tenpo-open-source/rats/badge.svg" alt="Snyk service vulnerabilities reported" />
