@@ -6,6 +6,9 @@
     <a href="https://www.codefactor.io/repository/github/tenpo-open-source/rats">
         <img src="https://www.codefactor.io/repository/github/tenpo-open-source/rats/badge?s=3cf91c60270c9d4a3e961745504e4c4e603f8d28" />
     </a>
+    <a href="https://snyk.io/test/github/tenpo-open-source/rats">
+        <img src="https://snyk.io/test/github/tenpo-open-source/rats/badge.svg" alt="Snyk service vulnerabilities reported" />
+    </a>
     <a href="https://github.com/tenpo-open-source/rats/blob/master/LICENSE">
         <img src="https://img.shields.io/badge/license-MIT-green" alt="License" />
   </a>
