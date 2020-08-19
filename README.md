@@ -63,6 +63,15 @@ gnuplot.
 
 He llegado a desplegar mas de 80 funciones cambiando el nombre y la ubicación. Con las cuales he podido llegar a testear aplicaciones con 100000tps. Todo esto sin ningun cobro. 
 
-## Contributing
+## Autores
 
-Sientete libre de modificar y enviar mejoras si te interesa. Esto fue una prueba de conceptos que nos sirvió mucho y quisimos compartir.
+ - [José Miguel Lueiza](https://www.github.com/tuto)
+
+## Contribuciones
+
+Sientete libre de modificar y enviar mejoras si te interesa. Esto fue una prueba de conceptos que nos sirvió mucho y quisimos compartir. Acá puedes encontrar la forma de hacerlo [Contributing](CONTRIBUTING.md)
+
+
+## Contacto
+
+- Siguenos en Instagram: [https://www.tenpo.cl/img/instagram.svg](https://www.tenpo.cl/img/instagram.svg)
