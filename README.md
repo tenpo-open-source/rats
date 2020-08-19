@@ -80,4 +80,4 @@ Sientete libre de modificar y enviar mejoras si te interesa. Esto fue una prueba
 
 ## Contacto
 
-- Siguenos en Instagram: [https://www.tenpo.cl/img/instagram.svg](https://www.tenpo.cl/img/instagram.svg)
+- Siguenos en Instagram: [https://www.instagram.com/tenpocl/](https://www.instagram.com/tenpocl/)
